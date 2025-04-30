@@ -1,211 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Logbook1 | Alif Edu</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>1Alif Edu Log Book</title>
   <style>
     body {
-      background-color: #0a1f44;
       margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-    }
-    .container {
+      background: navy;
+      font-family: 'Segoe UI', sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       padding: 20px;
     }
-    .card {
-      background-color: #fff;
+
+    .logbook-card {
+      background: white;
+      padding: 30px;
       border-radius: 20px;
-      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-      padding: 40px 30px;
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
       width: 100%;
       max-width: 600px;
+      transform: rotateX(5deg);
+      transition: all 0.3s ease-in-out;
     }
-    h1 {
+
+    .logbook-card:hover {
+      transform: rotateX(0deg);
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    h2 {
       text-align: center;
-      color: #0a1f44;
+      color: navy;
       margin-bottom: 20px;
-      text-shadow: 1px 1px 3px gray;
     }
+
     label {
-      display: block;
-      margin-top: 15px;
       font-weight: bold;
-      font-size: 14px;
-      color: #333;
+      display: block;
+      margin: 15px 0 5px;
     }
+
     input, select, textarea {
       width: 100%;
-      padding: 12px 14px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
+      padding: 10px;
       border-radius: 10px;
-      font-size: 14px;
+      border: 1px solid #ccc;
       box-sizing: border-box;
+      margin-bottom: 10px;
     }
+
     textarea {
       resize: vertical;
     }
-    .button-group {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 20px;
-    }
-    button {
-      background-color: #ffcc00;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 10px;
-      font-weight: bold;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    button:hover {
-      background-color: #e6b800;
-    }
-    footer {
-      text-align: center;
-      margin-top: 30px;
+
+    .submit-btn {
+      background: goldenrod;
       color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .submit-btn:hover {
+      background: darkgoldenrod;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 20px;
       font-size: 14px;
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      .logbook-card {
+        padding: 20px;
+        transform: none;
+      }
     }
   </style>
 </head>
 <body>
 
-<div class="container">
-  <div class="card">
-    <h1>Log Book</h1>
-    <form id="logbookForm">
+  <form id="logbook-form" class="logbook-card">
+    <h2>Class Log Book</h2>
 
-      <label for="date">Date</label>
-      <input type="date" id="date" name="date" required>
+    <label>Teacher’s Name</label>
+    <input type="text" name="teacher" required />
 
-      <label for="teacher_name">Teacher’s Name</label>
-      <input type="text" id="teacher_name" name="teacher_name" required>
+    <label>Staff ID</label>
+    <input type="text" name="staffID" required />
 
-      <label for="staff_id">Staff ID</label>
-      <input type="text" id="staff_id" name="staff_id" required>
+    <label>Program</label>
+    <select name="program" required>
+      <option value="" disabled selected>Select Program</option>
+      <option>Kinder Pre-School</option>
+      <option>Little Learner</option>
+      <option>Horizon</option>
+      <option>Degree/Madrasa</option>
+    </select>
 
-      <label for="program">Program</label>
-      <input type="text" id="program" name="program" required>
+    <label>Class</label>
+    <select name="className" required>
+      <option value="" disabled selected>Select Class</option>
+      <option>KG</option>
+      <option>Class 1</option>
+      <option>Class 2</option>
+      <option>Class 3</option>
+      <option>Class 4</option>
+      <option>Class 5</option>
+      <option>Class 6</option>
+      <option>Class 7</option>
+      <option>Class 8</option>
+      <option>Class 9</option>
+      <option>Class 10</option>
+      <option>Degree</option>
+    </select>
 
-      <label for="class">Class</label>
-      <select id="class" name="class" required>
-        <option value="">Select Class</option>
-        <option value="KG">KG</option>
-        <option value="Class 1">Class 1</option>
-        <option value="Class 2">Class 2</option>
-        <option value="Class 3">Class 3</option>
-      </select>
+    <label>Student Name</label>
+    <input type="text" name="student" required />
 
-      <label for="student_name">Student Name</label>
-      <input type="text" id="student_name" name="student_name">
+    <label>Subjects</label>
+    <select name="subject" required>
+      <option value="" disabled selected>Select Subject</option>
+      <option>Maths</option>
+      <option>Science</option>
+      <option>English</option>
+      <option>Malayalam</option>
+      <option>Social Science</option>
+      <option>Computer</option>
+      <option>Islamic Studies</option>
+    </select>
 
-      <label for="subject">Subject</label>
-      <select id="subject" name="subject" required>
-        <option value="">Select Subject</option>
-        <option value="Maths">Maths</option>
-        <option value="Science">Science</option>
-        <option value="English">English</option>
-      </select>
+    <label>Class In</label>
+    <input type="time" name="classIn" required />
 
-      <label for="class_in">Class In (Time)</label>
-      <input type="time" id="class_in" name="class_in" required>
+    <label>Class Duration</label>
+    <select name="duration" required>
+      <option value="" disabled selected>Select Duration</option>
+      <option>30 mins</option>
+      <option>45 mins</option>
+      <option>1 hour</option>
+      <option>1.5 hours</option>
+    </select>
 
-      <label for="class_duration">Class Duration</label>
-      <select id="class_duration" name="class_duration" required>
-        <option value="">Select Duration</option>
-        <option value="60 min">60 min</option>
-        <option value="60 + 15 min">60 + 15 min</option>
-        <option value="60 + 30 min">60 + 30 min</option>
-        <option value="60 + 45 min">60 + 45 min</option>
-        <option value="60 + 60 min">60 + 60 min</option>
-      </select>
+    <label>What did you teach today?</label>
+    <textarea name="taught" rows="2" required></textarea>
 
-      <label for="taught_today">What did you teach today?</label>
-      <textarea id="taught_today" name="taught_today" rows="3"></textarea>
+    <label>Student Engagement</label>
+    <textarea name="engagement" rows="2" required></textarea>
 
-      <label for="student_engagement">Student Engagement</label>
-      <textarea id="student_engagement" name="student_engagement" rows="3"></textarea>
+    <label>Homework or Tasks Given?</label>
+    <textarea name="homework" rows="2"></textarea>
 
-      <label for="homework_given">Homework or Tasks Given?</label>
-      <textarea id="homework_given" name="homework_given" rows="2"></textarea>
+    <label>What type of Work</label>
+    <select name="workType">
+      <option value="" disabled selected>Select Work Type</option>
+      <option>Worksheet</option>
+      <option>Reading</option>
+      <option>Activity</option>
+      <option>Project</option>
+      <option>None</option>
+    </select>
 
-      <label for="work_type">What type of Work</label>
-      <select id="work_type" name="work_type">
-        <option value="">Select Type</option>
-        <option value="Assignment">Assignment</option>
-        <option value="Project">Project</option>
-        <option value="Worksheet">Worksheet</option>
-        <option value="Class Test">Class Test</option>
-      </select>
+    <label>Upload Class Notification Message</label>
+    <textarea name="notification" rows="2"></textarea>
 
-      <label for="upload_work">Upload Class Notification Message</label>
-      <textarea id="upload_work" name="upload_work" rows="2"></textarea>
+    <label>Anything you'd like to share?</label>
+    <textarea name="extra" rows="2"></textarea>
 
-      <label for="share_moments">Anything you'd like to share?</label>
-      <textarea id="share_moments" name="share_moments" rows="3"></textarea>
+    <button type="submit" class="submit-btn">Go to Dashboard & Submit</button>
 
-      <div class="button-group">
-        <button type="submit">Submit</button>
-        <button type="button" onclick="window.location.href='dashboard.html'">Dashboard</button>
-      </div>
+    <div class="footer">Powered by Alif Edu</div>
+  </form>
 
-    </form>
-  </div>
-</div>
+  <script>
+    document.getElementById('logbook-form').addEventListener('submit', function(e) {
+      e.preventDefault();
 
-<footer>
-  Powered by Alif Edu
-</footer>
+      const form = e.target;
+      const data = {
+        date: new Date().toLocaleDateString(),
+        teacher: form.teacher.value,
+        staffID: form.staffID.value,
+        program: form.program.value,
+        className: form.className.value,
+        student: form.student.value,
+        subject: form.subject.value,
+        classIn: form.classIn.value,
+        duration: form.duration.value,
+        taught: form.taught.value,
+        engagement: form.engagement.value,
+        homework: form.homework.value,
+        workType: form.workType.value,
+        notification: form.notification.value,
+        extra: form.extra.value
+      };
 
-<script>
-  document.getElementById('logbookForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const formData = {
-      date: document.getElementById('date').value,
-      teacher_name: document.getElementById('teacher_name').value,
-      staff_id: document.getElementById('staff_id').value,
-      program: document.getElementById('program').value,
-      class: document.getElementById('class').value,
-      student_name: document.getElementById('student_name').value,
-      subject: document.getElementById('subject').value,
-      class_in: document.getElementById('class_in').value,
-      class_duration: document.getElementById('class_duration').value,
-      taught_today: document.getElementById('taught_today').value,
-      student_engagement: document.getElementById('student_engagement').value,
-      homework_given: document.getElementById('homework_given').value,
-      work_type: document.getElementById('work_type').value,
-      upload_work: document.getElementById('upload_work').value,
-      share_moments: document.getElementById('share_moments').value
-    };
-
-    fetch('https://script.google.com/macros/s/AKfycbzg07s9nDxSflsc7OE28lzz7FGlaFkjQFGItcVovfFtDufg3kgFpXj4ZS0_jeP0CAguJw/exec', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    })
-    .then(response => response.json())
-    .then(data => {
-      alert('✅ Submitted Successfully!');
-      document.getElementById('logbookForm').reset();
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      alert('❌ Submission failed. Try again!');
+      fetch("https://script.google.com/macros/s/AKfycbzg07s9nDxSflsc7OE28lzz7FGlaFkjQFGItcVovfFtDufg3kgFpXj4ZS0_jeP0CAguJw/exec", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json" }
+      })
+      .then(res => res.text())
+      .then(res => alert("Logbook submitted successfully!"))
+      .catch(err => alert("Error: " + err.message));
     });
-  });
-</script>
+  </script>
 
 </body>
 </html>
