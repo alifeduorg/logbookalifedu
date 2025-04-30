@@ -8,7 +8,7 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #001f3f; /* Navy Blue */
+      background-color: #001f3f;
       font-family: 'Segoe UI', sans-serif;
       color: #333;
       display: flex;
@@ -52,6 +52,13 @@
       resize: vertical;
     }
 
+    .button-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
     .submit-btn {
       background-color: #f1c40f;
       color: #000;
@@ -61,11 +68,28 @@
       border-radius: 10px;
       cursor: pointer;
       transition: 0.3s;
-      width: 100%;
+      flex: 1;
     }
 
     .submit-btn:hover {
       background-color: #d4ac0d;
+    }
+
+    .dashboard-btn {
+      background-color: #ffffff;
+      color: #001f3f;
+      border: 2px solid #001f3f;
+      font-weight: bold;
+      padding: 12px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      flex: 1;
+    }
+
+    .dashboard-btn:hover {
+      background-color: #001f3f;
+      color: #ffffff;
     }
 
     .footer {
@@ -78,14 +102,19 @@
       .logbook-card {
         padding: 20px;
       }
+
+      .button-group {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
 
 <div class="logbook-card">
-  <h2>1Logbook Entry - Alif Edu</h2>
+  <h2>Logbook Entry - Alif Edu</h2>
   <form id="logbookForm">
+    <!-- All input fields (same as before) -->
     <label>Date</label>
     <input type="date" name="date" required>
 
@@ -172,7 +201,10 @@
     <label>Anything you'd like to share?</label>
     <textarea name="additionalNotes" rows="2"></textarea>
 
-    <button class="submit-btn" type="submit">Submit & Go to Dashboard</button>
+    <div class="button-group">
+      <button class="submit-btn" type="submit">Submit</button>
+      <button class="dashboard-btn" type="button" onclick="goToDashboard()">Go to Dashboard</button>
+    </div>
   </form>
 </div>
 
@@ -190,7 +222,7 @@
     formData.forEach((value, key) => data[key] = value);
 
     try {
-      const response = await fetch(https://script.google.com/macros/s/AKfycbzg07s9nDxSflsc7OE28lzz7FGlaFkjQFGItcVovfFtDufg3kgFpXj4ZS0_jeP0CAguJw/exec", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbzg07s9nDxSflsc7OE28lzz7FGlaFkjQFGItcVovfFtDufg3kgFpXj4ZS0_jeP0CAguJw/exec", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
@@ -200,8 +232,6 @@
       if (response.ok) {
         alert("Logbook submitted successfully!");
         form.reset();
-        // Optional: redirect to dashboard
-        // window.location.href = "/dashboard";
       } else {
         alert("Error submitting the logbook.");
       }
@@ -209,6 +239,10 @@
       alert("Connection error. Please try again.");
     }
   });
+
+  function goToDashboard() {
+    window.location.href = "https://your-dashboard-link.com"; // Change this to your dashboard URL
+  }
 </script>
 
 </body>
