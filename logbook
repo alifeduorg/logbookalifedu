@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Teacher Logbook Form</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    form { max-width: 700px; margin: auto; }
+    label { display: block; margin-top: 15px; font-weight: bold; }
+    input, select, textarea {
+      width: 100%; padding: 8px; margin-top: 5px;
+      border: 1px solid #ccc; border-radius: 5px;
+    }
+    button { margin-top: 20px; padding: 10px 20px; }
+  </style>
+</head>
+<body>
+  <h2>Teacher Daily Logbook</h2>
+  <form action="https://script.google.com/macros/s/AKfycbzg07s9nDxSflsc7OE28lzz7FGlaFkjQFGItcVovfFtDufg3kgFpXj4ZS0_jeP0CAguJw/exec" method="POST">
+    
+    <label for="date">Date</label>
+    <input type="date" id="date" name="Date" required>
+
+    <label for="teacher">Teacher’s Name</label>
+    <input type="text" id="teacher" name="Teacher Name" required>
+
+    <label for="staffid">Staff ID</label>
+    <input type="text" id="staffid" name="Staff ID" required>
+
+    <label for="program">Program</label>
+    <input type="text" id="program" name="Program" required>
+
+    <label for="class">Class</label>
+    <input type="text" id="class" name="Class" required>
+
+    <label for="student">Student Name</label>
+    <input type="text" id="student" name="Student Name">
+
+    <label for="subjects">Subjects</label>
+    <input type="text" id="subjects" name="Subjects">
+
+    <label for="classin">Class In</label>
+    <input type="text" id="classin" name="Class In">
+
+    <label for="duration">Class Duration</label>
+    <input type="text" id="duration" name="Class Duration">
+
+    <label for="teaching">What did you teach today?</label>
+    <textarea id="teaching" name="What did you teach today?" rows="3"></textarea>
+
+    <label for="engagement">Student Engagement</label>
+    <select id="engagement" name="Student Engagement">
+      <option value="Excellent">Excellent</option>
+      <option value="Good">Good</option>
+      <option value="Average">Average</option>
+      <option value="Poor">Poor</option>
+    </select>
+
+    <label for="homework">Homework or Tasks Given?</label>
+    <select id="homework" name="Homework or Tasks Given?">
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select>
+
+    <label for="worktype">What type of Work</label>
+    <input type="text" id="worktype" name="What type of Work">
+
+    <label for="notification">Upload Class Notification Message</label>
+    <input type="file" id="notification" name="Upload Class Notification Message">
+
+    <label for="notes">Anything you'd like to share?</label>
+    <textarea id="notes" name="Anything you'd like to share?" rows="3"></textarea>
+
+    <button type="submit">Submit Log</button>
+  </form>
+</body>
+</html>
